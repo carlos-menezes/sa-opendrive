@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <math.h>
+#include <filesystem>
+#include <direct.h>
 #include <opencv2/opencv.hpp>
 
 void handleMouseClick(int event, int x, int y, int flag, void *param) {
@@ -59,8 +61,8 @@ std::vector<cv::Vec4i> getLongestLines(std::vector<cv::Vec4i>& lines, int amount
 }
 
 int main() {
-    cv::Mat original = cv::imread("C:\\Users\\Carlos\\CLionProjects\\sa-opendrive\\drive.png");
-    cv::Rect roi = cv::Rect(20, 320, original.size().width - 40, 160);
+    cv::Mat original = cv::imread("images/drive.png");
+    cv::Rect roi = cv::Rect(20, 320, original.size().width - 40, 140);
     original = original(roi);
 
     cv::Mat output;
