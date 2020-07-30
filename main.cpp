@@ -3,15 +3,6 @@
 #include <filesystem>
 #include <opencv2/opencv.hpp>
 
-void handleMouseClick(int event, int x, int y, int flag, void *param) {
-    switch (event) {
-        case cv::EVENT_LBUTTONDOWN:
-            std::cout << "X: " << x << " | Y: " << y << std::endl;
-        default:
-            break;
-    }
-}
-
 float getLineSlope(cv::Vec4i& line) {
     float yDiff = (line[3]-line[1]);
     float xDiff = (line[2]-line[0]);
@@ -92,7 +83,6 @@ int main() {
     }
 
     cv::namedWindow("Canny");
-    cv::setMouseCallback("Canny", handleMouseClick);
 
     cv::imshow("Lanes", original);
     cv::imshow("Canny", output);
