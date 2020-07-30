@@ -1,8 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <math.h>
 #include <filesystem>
-#include <direct.h>
 #include <opencv2/opencv.hpp>
 
 void handleMouseClick(int event, int x, int y, int flag, void *param) {
